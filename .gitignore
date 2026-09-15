@@ -1,0 +1,28 @@
+# dependencies
+node_modules/
+yarn.lock
+package-lock.json
+
+# local env files
+.env*
+
+build/
+
+package-lock.json
+yarn-error.log
+
+.eslintcache
+
+storybook-static/
+build-storybook.log
+
+.vscode
+.DS_Store
+.react-templates
+
+# gatsby files
+.cache/
+
+# next files
+.next/
+.vercel/

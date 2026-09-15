@@ -1,0 +1,41 @@
+.accordion-tabs-swiper.swiper {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 60px;
+}
+
+.accordion-tabs-swiper .swiper-pagination {
+  border: 1px solid var(--color-dune);
+  border-radius: 6px;
+  padding: 2px;
+  align-self: center;
+  display: flex;
+}
+
+.accordion-tabs-swiper .swiper-pagination-bullet {
+  padding: 10px;
+  color: var(--color-blaze);
+  display: block;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.accordion-tabs-swiper .swiper-pagination-bullet-active {
+  background-color: var(--color-blaze);
+  color: var(--color-obisidian);
+  font-weight: 700;
+}
+
+@media (max-width: 639px) {
+  .accordion-tabs-swiper .swiper-pagination {
+    display: none;
+  }
+  .accordion-tabs-swiper .swiper-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  .accordion-tabs-swiper .swiper-slide {
+    pointer-events: auto;
+  }
+}

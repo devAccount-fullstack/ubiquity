@@ -1,0 +1,70 @@
+export const plainTextConfig = {
+  name: "Plain Text",
+  defaultStyles: {
+    marginTop: false,
+  },
+  hideFromInsertMenu: true,
+  inputs: [
+    {
+      name: "elementType",
+      type: "text",
+      enum: ["h2", "h3", "h4", "h5", "h6", "p"],
+      defaultValue: "p",
+    },
+    {
+      name: "contentId",
+      type: "string",
+      helperText: "Add an id for smooth scroll purposes",
+    },
+    {
+      name: "content",
+      type: "richText",
+      defaultValue: "Lorem Ipsum is simply dummy text",
+    },
+    {
+      name: "fontSize",
+      type: "string",
+      enum: [
+        "display12xl",
+        "display11xl",
+        "display6xl",
+        "display4xl",
+        "display3xl",
+        "display2xl",
+        "displayxl",
+        "displaylg",
+        "displaymd",
+        "displaysm",
+        "displayxs",
+        "eyebrow",
+        "eyebrowmobile",
+        "xl",
+        "lg",
+        "md",
+        "sm",
+        "xs",
+        "overlinelg",
+        "overlinemd",
+        "overlinesm",
+      ],
+      defaultValue: "xl",
+      helperText: "Customize the font size",
+      showIf: "options.get('elementType') === 'p'",
+    },
+    {
+      name: "bulletType",
+      enum: ["list-disc", "list-decimal", "list-none"],
+      defaultValue: "list-disc",
+    },
+    {
+      name: "bulletText",
+      type: "list",
+      subFields: [
+        {
+          name: "listText",
+          type: "string",
+        },
+      ],
+    },
+  ],
+};

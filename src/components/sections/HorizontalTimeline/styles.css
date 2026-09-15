@@ -1,0 +1,9 @@
+.border-image-gradient {
+  border-image: linear-gradient(to bottom, #FDF7EA 62%, rgba(254, 176, 157, 0.5) 38%) 1;
+}
+
+@media (width >= 40rem) {
+  .border-image-gradient {
+    border-image: linear-gradient(to right, #FDF7EA 62%, rgba(254, 176, 157, 0.5) 38%) 1;
+  }
+}

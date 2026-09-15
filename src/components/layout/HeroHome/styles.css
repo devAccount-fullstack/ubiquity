@@ -1,0 +1,87 @@
+/* Line/dot animations */
+.svg-layer {
+    pointer-events: none; 
+}
+.svg-el {
+    position: absolute;
+    width: 15vw;
+    height: auto;
+    min-width: 60px;
+    min-height: 40px;
+}
+
+#line01.svg-el {
+    left: 6%;
+    top: 25%;
+}
+
+#line02.svg-el {
+    width: 32vw;
+    top: 26%;
+    left: 9%;
+}
+
+#line03.svg-el {
+    width: 12vw;
+}
+
+.svg-animation .animated-path-home-hero {
+    stroke-dasharray: 2000;
+    stroke-dashoffset: 2000;
+}
+
+#line02 {
+    right: 12.5%;
+    bottom: 60%;
+}
+
+#line01 {
+    right: 30%;
+    bottom: 33%;
+}
+
+#line03 {
+    right: 3%;
+    bottom: 22%;
+}
+
+/* Line 01 */
+.svg-animation.start #line01 .animated-path-home-hero.line-1 {
+    animation: drawPathReverse 3s ease-out forwards;
+    animation-delay: 1s;
+}
+.svg-animation.start #line01 .line-1-animated-dot-1 {
+    animation: fadeInDot 0.2s ease-in forwards;
+}
+
+.svg-animation.start #line01 .line-1-animated-dot-2 {
+    animation: fadeInDot 0.2s ease-in forwards;
+    animation-delay: 1.5s;
+}
+
+/* Line 02 */
+.svg-animation.start #line02 .animated-path-home-hero.line-2 {
+    animation: drawPathReverse 3s ease-out forwards;
+    animation-delay: 0.5s;
+}
+
+.svg-animation.start #line02 .line-2-animated-dot-1 {
+    animation: fadeInDot 0.2s ease-in forwards;
+    animation-delay: 1s;
+}
+
+/* Line 03 */
+.svg-animation.start #line03 .animated-path-home-hero.line-3 {
+    animation: drawPathReverse 3s ease-out forwards;
+    animation-delay: 1.9s;
+}
+
+.svg-animation.start #line03 .line-3-animated-dot-1 {
+    animation: fadeInDot 0.2s ease-in forwards;
+    animation-delay: 1.6s;
+}
+
+.svg-animation.start #line03 .line-3-animated-dot-2 {
+    animation: fadeInDot 0.2s ease-in forwards;
+    animation-delay: 2.1s;
+}

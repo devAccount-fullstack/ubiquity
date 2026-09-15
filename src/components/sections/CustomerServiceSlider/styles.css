@@ -1,0 +1,9 @@
+@media (max-width: 639px) {
+  .customer-service-slider .swiper-pagination {
+    display: none;
+  }
+  .customer-service-slider .swiper-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+}

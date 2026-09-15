@@ -1,0 +1,46 @@
+.hubspot-form .newsletter-signup-leadin {
+  font-weight: var(--font-weight-bold);
+}
+
+.hubspot-form--newsletter .hs-email label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.hubspot-form--newsletter .hs-input:not([type="checkbox"]) {
+  background-color: var(--color-tundra);
+  border-radius: 6px;
+  padding: 18px 20px;
+  width: 100%;
+  max-width: 300px;
+  margin: 0.5em 0;
+}
+
+.hubspot-form--newsletter .hs-input::placeholder {
+  color: var(--color-white);
+}
+
+.hubspot-form--newsletter .hs-button {
+  color: var(--color-blaze);
+  background-color: var(--color-white);
+  font-weight: var(--font-weight-bold);
+  border-radius: 6px;
+  padding: 14px 20px;
+  margin-top: 0.5em;
+}
+.hubspot-form--newsletter .hs-input[type="checkbox"] {
+  accent-color: var(--color-blaze);
+  width: auto;
+  margin-right: 4px;
+}
+
+.hubspot-form--newsletter .hs-error-msgs {
+  color: var(--color-blaze);
+}
