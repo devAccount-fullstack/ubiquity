@@ -46,7 +46,7 @@ const MapPin = ({
           <p>{marker?.text3 ?? ""}</p>
         </div>
       </div>
-      <div className="bg-dune group-hover/pin:bg-blaze group-[.active]/pin:bg-blaze relative h-2 w-2 rounded-full group-hover/pin:z-10 md:h-3 md:w-3 lg:h-5 lg:w-5" />
+      <div className="bg-dune group-hover/pin:bg-blaze group-[.active]/pin:bg-blaze relative h-[4px] w-[4px] rounded-full group-hover/pin:z-10 md:h-[10px] md:w-[10px] lg:h-[10px] lg:w-[10px]" />
     </button>
   );
 };
