@@ -39,6 +39,18 @@ const config = {
           type: "string",
         },
         {
+          name: "pinType",
+          friendlyName: "Pin Type",
+          type: "string",
+          enum: [
+            { label: "Remote", value: "remote" },
+            { label: "In-Center", value: "in-center" },
+            { label: "Both (half & half)", value: "both" },
+            { label: "Headquarters (star)", value: "hq" },
+          ],
+          defaultValue: "in-center",
+        },
+        {
           name: "position",
           type: "object",
           subFields: [
