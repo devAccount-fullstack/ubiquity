@@ -106,6 +106,17 @@ const Map = ({
           </Button>
         </div>
       )}
+      <div className="flex items-center justify-end gap-6 mt-8">
+        <div className="flex items-center gap-2">
+          <span className="h-3.5 w-3.5 rounded-full bg-[#FEB09D]"></span>
+          <span className="text-sm font-medium text-white">Remote</span>
+        </div>
+
+        <div className="flex items-center gap-2">
+          <span className="h-3.5 w-3.5 rounded-full bg-[#ff5c38]"></span>
+          <span className="text-sm font-medium text-white">In-Center</span>
+        </div>
+      </div>
     </Section>
   );
 };
