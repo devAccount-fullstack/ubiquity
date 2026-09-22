@@ -1,20 +1,14 @@
 import { BuilderBlockAttributes } from "@/global.types";
 
-export type PinType = "remote" | "in-center" | "both" | "hq";
-
-/** Pin types that render as a dot (everything except the HQ star). */
-export type DotType = Exclude<PinType, "hq">;
-
 export interface positionProps {
-  left: number; // % of map width
-  top: number; // % of map height
+  left: number;
+  top: number;
 }
 
 export interface listMapPinProps {
-  text1: string; // city label, e.g. "Sheffield, UK"
-  text2?: string; // optional subtitle, e.g. "Ubiquity Global Headquarters"
-  text3?: string; // no longer displayed (kept so existing Builder content doesn't break)
-  pinType?: PinType;
+  text1: string;
+  text2?: string;
+  text3?: string;
   labelSide?: "left" | "right";
   position: positionProps;
 }
@@ -22,7 +16,7 @@ export interface listMapPinProps {
 export interface listMapCardProps {
   title: string;
   text: string;
-  width?: number; // % of the map width
+  width?: number;
   position: positionProps;
 }
 

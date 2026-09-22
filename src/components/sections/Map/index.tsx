@@ -7,25 +7,10 @@ import type {
   listMapPinProps,
   listMapCardProps,
   MapProps,
-  PinType,
 } from "./types";
 import SectionHeader from "@components/common/SectionHeader";
 import { twMerge } from "tailwind-merge";
 import Button from "@components/common/Button";
-
-type DotType = Exclude<PinType, "hq">;
-
-const PIN_STYLES: Record<DotType, string> = {
-  remote: "bg-[#FEB09D]",
-  "in-center": "bg-[#ff5c38]",
-  both: "bg-[linear-gradient(90deg,#FEB09D_50%,#ff5c38_50%)]",
-};
-
-// Matches the design: only two legend items
-const LEGEND: { type: DotType; label: string }[] = [
-  { type: "remote", label: "Remote" },
-  { type: "in-center", label: "In-Center" },
-];
 
 const MapPin = ({
   marker,
@@ -38,13 +23,12 @@ const MapPin = ({
   isHovered?: number;
   setIsHovered: (hovered: number) => void;
 }) => {
-  const type = marker.pinType ?? "in-center";
   const left = marker.position?.left ?? 0;
   const top = marker.position?.top ?? 0;
 
   // Uses the "Label Side" field if set, otherwise flips to the left past 50%
-  // (same behavior as before).
-  const labelLeft = (marker.labelSide ?? (left > 50 ? "left" : "right")) === "left";
+  const labelLeft =
+    (marker.labelSide ?? (left > 50 ? "left" : "right")) === "left";
 
   return (
     <button
@@ -67,39 +51,28 @@ const MapPin = ({
             : "left-full ml-1.5 text-left md:ml-2",
         )}
       >
-        <p
-          className={twMerge(
-            "text-[8px] font-bold md:text-sm",
-            type === "hq" && "text-[#ff5c38]",
-          )}
-        >
+        <p className="text-[8px] font-bold md:text-sm">
           {marker?.text1 ?? ""}
         </p>
+
         {marker?.text2 && (
-          <p className="text-[6px] text-white/70 md:text-xs">{marker.text2}</p>
+          <p className="text-[6px] text-white/70 md:text-xs">
+            {marker.text2}
+          </p>
         )}
+
         {marker?.text3 && (
-          <p className="text-[6px] text-white/70 md:text-xs">{marker.text3}</p>
+          <p className="text-[6px] text-white/70 md:text-xs">
+            {marker.text3}
+          </p>
         )}
       </div>
 
-      {/* Dot / star: color always comes from the pin type, never changes on hover */}
-      {type === "hq" ? (
-        <svg
-          viewBox="0 0 24 24"
-          className="block h-3 w-3 fill-[#ff5c38] transition-transform group-hover/pin:scale-125 group-[.active]/pin:scale-125 md:h-5 md:w-5"
-          aria-hidden="true"
-        >
-          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-        </svg>
-      ) : (
-        <span
-          className={twMerge(
-            "block h-[6px] w-[6px] rounded-full transition-transform group-hover/pin:scale-125 group-[.active]/pin:scale-125 md:h-[10px] md:w-[10px]",
-            PIN_STYLES[type],
-          )}
-        />
-      )}
+      {/* Orange location dot */}
+      <span
+        className="block h-[6px] w-[6px] rounded-full bg-[#ff5c38] transition-transform group-hover/pin:scale-125 group-[.active]/pin:scale-125 md:h-[10px] md:w-[10px]"
+        aria-hidden="true"
+      />
     </button>
   );
 };
@@ -151,9 +124,11 @@ const Map = ({
               />
             </div>
           )}
+
           {list_map_cards?.map((card, idx) => (
             <MapCard key={`MapCard-${idx}`} card={card} />
           ))}
+
           {list_map_pin?.map((marker, idx) => (
             <MapPin
               key={`MapPin-${idx}`}
@@ -193,17 +168,6 @@ const Map = ({
           </Button>
         </div>
       )}
-
-      <div className="mt-8 flex items-center justify-end gap-6">
-        {LEGEND.map(({ type, label }) => (
-          <div key={type} className="flex items-center gap-2">
-            <span
-              className={twMerge("h-3.5 w-3.5 rounded-full", PIN_STYLES[type])}
-            />
-            <span className="text-sm font-medium text-white">{label}</span>
-          </div>
-        ))}
-      </div>
     </Section>
   );
 };
